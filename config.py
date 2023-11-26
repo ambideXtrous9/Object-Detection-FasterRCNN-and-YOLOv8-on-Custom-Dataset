@@ -1,0 +1,12 @@
+WIDTH = 100
+HEIGHT = 100
+BATCH_SIZE = 4
+VAL_SPLIT = 0.2
+NUM_CLASSES = 27
+LR = 0.001
+CHECKPOINT_NAME = 'FasterRCNNBest'
+ANNOTATION_FILE_PATH = 'flickr_logos_dataset/flickr_logos_27_dataset/flickr_logos_27_dataset_training_set_annotation.txt'
+QUERY_SET_PATH = 'flickr_logos_dataset/flickr_logos_27_dataset/flickr_logos_27_dataset_query_set_annotation.txt'
+CHECKPOINT_PATH = 'checkpoints/Efficient-Best.ckpt'
+MAIN_LOGO_FOLDER = 'flickr_logos_dataset/flickr_logos_27_dataset_images'
+MAX_EPOCHS = 100
