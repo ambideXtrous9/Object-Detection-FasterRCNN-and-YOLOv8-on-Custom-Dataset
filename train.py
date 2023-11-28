@@ -5,6 +5,7 @@ from dataloader import Flickr27DataModule
 from lightning.pytorch import seed_everything
 import config
 
+
 seed_everything(42, workers=True)
 
 
@@ -16,7 +17,7 @@ checkpoint_callback = ModelCheckpoint(
     filename = config.CHECKPOINT_NAME,
     save_top_k = 1,
     verbose = True,
-    monitor = 'mean_val',
+    monitor = 'train_loss',
     mode = 'min'
 )
 
@@ -30,7 +31,7 @@ data_module.setup()
 trainer = pl.Trainer(devices=-1, 
                   accelerator="gpu",
                   check_val_every_n_epoch=5,
-                #   callbacks=[checkpoint_callback],
+                  callbacks=[checkpoint_callback],
                   max_epochs=config.MAX_EPOCHS)
 
 

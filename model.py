@@ -32,8 +32,8 @@ class FasterRCNNLightning(pl.LightningModule):
         images, targets = batch
         outputs = self(images, targets)
         loss = sum(loss for loss in outputs.values())
-        self.log('Loss', loss, on_step=True, on_epoch=True, prog_bar=True)
-        return {"loss": loss}  
+        self.log('train_loss', loss, on_step=True, on_epoch=True, prog_bar=True)
+        return loss
         
     def configure_optimizers(self):
         return torch.optim.AdamW(self.parameters(), lr=self.lr)

@@ -13,9 +13,6 @@ import albumentations as A
 from albumentations.pytorch.transforms import ToTensorV2
 
 
-resize = transforms.Resize(size=(config.WIDTH,config.HEIGHT))
-
-
 def get_train_transform():
     return A.Compose([
         A.Flip(0.5),
